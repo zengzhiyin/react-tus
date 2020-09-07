@@ -1,0 +1,18 @@
+ul{
+    margin-top: 1em;
+    list-style: none;
+    padding: 0;
+    padding: 0 10px;
+}
+li{
+    margin-bottom: 10px;
+}
+li>span{
+    margin: 0 10px;
+}
+.delete{
+    float: right;
+}
+.tag{
+    float: right;
+}
