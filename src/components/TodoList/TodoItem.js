@@ -12,17 +12,21 @@ export default class TodoItem extends Component {
     //     }
     // }
     shouldComponentUpdate (nextProps,nextStates){
-        console.log(nextProps,nextStates)
+        // console.log(nextProps,nextStates)
+
         return true
     }
     todoChange = () =>{
+        //预设一个空的函数或者像下面一样判断是否存在这个函数
         const { todoChange = ()=>{} } = this.props
         todoChange(this.props)
     }
     todoDelete = () =>{
+        //判断是否存在函数
         this.props.todoDelete&&this.props.todoDelete(this.props)
     }
     todoLike = () =>{
+        //判断是否存在函数
         this.props.todoLike&&this.props.todoLike(this.props)
     }
     render() {

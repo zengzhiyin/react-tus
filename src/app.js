@@ -11,6 +11,7 @@ export default class App extends Component {
     constructor(){
         super()
         this.state = {
+            date: new Date(),
             title:'待办事项列表',
             desc:'今日事，今日毕',
             todos:[
@@ -47,7 +48,7 @@ export default class App extends Component {
     }
     setId = () =>{
         const arr = [...this.state.todos].sort((a,b)=>{
-            return a.id-b.id
+            return a.id - b.id
         })
         let id = 0
         if(arr.length === 0){
@@ -69,29 +70,38 @@ export default class App extends Component {
         return id
     }
     todoChange = (todo) =>{
-        let newTodo = [...this.state.todos]
-        newTodo.forEach((item)=>{
-            if(item.id === todo.id){
-                item.isCompleted = !item.isCompleted
-            } 
-        })
-        this.setState({
-            todos:newTodo
-        })
-        // this.setState((prevState)=>{
-        //     console.log(prevState)
+        // let newTodo = [...this.state.todos]
+        // newTodo.forEach((item)=>{
+        //     if(item.id === todo.id){
+        //         item.isCompleted = !item.isCompleted
+        //     } 
         // })
-        // console.log(newTodo)
+        // this.setState({
+        //     todos:newTodo
+        // })
+        this.setState((prevState)=>{
+            // console.log(prevState)
+            return {
+                todos: prevState.todos.map(item=>{
+                    if(item.id === todo.id){
+                        item.isCompleted = !item.isCompleted
+                    }
+                    return item
+                })
+            }
+        })
     }
     todoLike = (todo) =>{
-        let newTodo = [...this.state.todos]
-        newTodo.forEach((item)=>{
-            if(item.id === todo.id){
-                item.isLike = !item.isLike
-            } 
-        })
-        this.setState({
-            todos:newTodo
+        this.setState((prevState)=>{
+            // console.log(prevState)
+            return {
+                todos: prevState.todos.map(item=>{
+                    if(item.id === todo.id){
+                        item.isLike = !item.isLike
+                    }
+                    return item
+                })
+            }
         })
     }
     todoDelete = (todo) =>{
@@ -105,6 +115,14 @@ export default class App extends Component {
             todos:newTodo
         })
     }
+
+    componentDidMount() {
+    }
+    
+    componentWillUnmount() {
+    }
+
+    
     render() {
         return (
             <Fragment>

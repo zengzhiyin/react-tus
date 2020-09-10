@@ -56,7 +56,8 @@ export default class TodoInput extends Component {
                 paddingLeft:10,
                 paddingRight:10
             }}>
-                <Input placeholder="请输入" 
+                <Input
+                    placeholder="请输入"
                     value={this.state.inputValue}
                     onChange={this.handleInput}
                     onKeyUp = {this.handleKeyUp}
