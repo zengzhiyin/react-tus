@@ -6,6 +6,7 @@ import {
     // Like
  } from "./components";
 
+import http from "./services";
 
 export default class App extends Component {
     constructor(){
@@ -117,6 +118,9 @@ export default class App extends Component {
     }
 
     componentDidMount() {
+        http.get(http.apiUrl.todos).then((data)=>{
+            console.log(data)
+        })
     }
     
     componentWillUnmount() {

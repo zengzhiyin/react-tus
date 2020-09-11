@@ -4,22 +4,8 @@ import { render } from "react-dom";
 // import { Component } from "react";
 import './index.css';
 import App from './app';
-// import * as serviceWorker from './serviceWorker';
+import './Mock/index.js';
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-// class App extends Component{
-//   render(){
-//     console.log(this)
-//     return (
-//         <div>34567</div>
-//     )
-//   }
-// }
 
 render(
   <App />,

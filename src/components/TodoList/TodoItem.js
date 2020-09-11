@@ -1,9 +1,7 @@
-import React, { Component, Fragment } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import { Checkbox,Button,Tag } from "antd";
 
-
-
-export default class TodoItem extends Component {
+export default class TodoItem extends PureComponent {
     // constructor () {
     //     super()
     //     // console.log(1)
@@ -11,11 +9,10 @@ export default class TodoItem extends Component {
     //         aa:'1'
     //     }
     // }
-    shouldComponentUpdate (nextProps,nextStates){
-        // console.log(nextProps,nextStates)
-
-        return true
-    }
+    // shouldComponentUpdate (nextProps,nextStates){
+    //     //为了避免改变其中一个key的时候，阻止其他没改变的组件进行重新渲染，或者使用只对第一层比较的Purecomponent
+    //     return nextProps.isCompleted !== this.props.isCompleted
+    // }
     todoChange = () =>{
         //预设一个空的函数或者像下面一样判断是否存在这个函数
         const { todoChange = ()=>{} } = this.props
