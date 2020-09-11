@@ -7,6 +7,7 @@ import {
  } from "./components";
 
 import http from "./services";
+// import { Button } from 'antd';
 
 export default class App extends Component {
     constructor(){
@@ -16,24 +17,24 @@ export default class App extends Component {
             title:'待办事项列表',
             desc:'今日事，今日毕',
             todos:[
-                {
-                    id:1,
-                    title:'吃饭',
-                    isCompleted:true,
-                    isLike: true
-                },
-                {
-                    id:3,
-                    title:'睡觉',
-                    isCompleted:false,
-                    isLike: true
-                },
-                {
-                    id:8,
-                    title:'扯淡',
-                    isCompleted:false,
-                    isLike: false
-                }
+                // {
+                //     id:1,
+                //     title:'吃饭',
+                //     isCompleted:true,
+                //     isLike: true
+                // },
+                // {
+                //     id:3,
+                //     title:'睡觉',
+                //     isCompleted:false,
+                //     isLike: true
+                // },
+                // {
+                //     id:8,
+                //     title:'扯淡',
+                //     isCompleted:false,
+                //     isLike: false
+                // }
             ]
         }
     }
@@ -118,8 +119,13 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        http.get(http.apiUrl.todos).then((data)=>{
-            console.log(data)
+        http.get(http.apiUrl.todoList).then((res)=>{
+            if(res.code === 200){
+                this.setState({
+                    todos:res.data
+                })
+            }
+            console.log(res)
         })
     }
     
@@ -136,6 +142,7 @@ export default class App extends Component {
                 <Todoinput addTodo={this.addTodo}></Todoinput>
                 <TodoList todos={this.state.todos} todoChange={this.todoChange} todoDelete={this.todoDelete} todoLike={this.todoLike}></TodoList>
                 {/* <Like></Like> */}
+                {/* <Button to>准备跳转</Button> */}
             </Fragment>
         )
     }
