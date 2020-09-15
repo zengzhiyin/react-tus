@@ -17,24 +17,24 @@ export default class App extends Component {
             title:'待办事项列表',
             desc:'今日事，今日毕',
             todos:[
-                // {
-                //     id:1,
-                //     title:'吃饭',
-                //     isCompleted:true,
-                //     isLike: true
-                // },
-                // {
-                //     id:3,
-                //     title:'睡觉',
-                //     isCompleted:false,
-                //     isLike: true
-                // },
-                // {
-                //     id:8,
-                //     title:'扯淡',
-                //     isCompleted:false,
-                //     isLike: false
-                // }
+                {
+                    id:1,
+                    title:'吃饭',
+                    isCompleted:true,
+                    isLike: true
+                },
+                {
+                    id:3,
+                    title:'睡觉',
+                    isCompleted:false,
+                    isLike: true
+                },
+                {
+                    id:8,
+                    title:'扯淡',
+                    isCompleted:false,
+                    isLike: false
+                }
             ]
         }
     }
