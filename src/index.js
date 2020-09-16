@@ -3,12 +3,15 @@ import React from 'react';
 import { render } from "react-dom";
 // import { Component } from "react";
 import './index.css';
-// import App from './app';
+import App from './app';
 import './Mock/index.js';
-import Counter from './demoHooks';
+
+
+
+
 
 render(
-  <Counter />,
+  <App />,
   document.getElementById('root')
 )
 

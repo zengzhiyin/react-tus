@@ -3,7 +3,7 @@ const { Button } = require("antd")
 
 const Counter = () => {
     const [ count, setCount ] = useState(20)
-    useEffect(()=>{ //类似与componentdidmount，每次改变组件，都会出发这个函数
+    useEffect(()=>{ //类似与componentdidmount，每次改变组件(挂在跟更新都会触发)，都会触发这个函数
         // console.log('更新了')
     })
     return (
