@@ -5,7 +5,6 @@ import {
     Todoinput,
     // Like
  } from "../../components";
-
 import http from "../services";
 // import { Button } from 'antd';
 
@@ -117,7 +116,6 @@ export default class App extends Component {
             todos:newTodo
         })
     }
-
     componentDidMount() {
         http.get(http.apiUrl.todoList).then((res)=>{
             if(res.code === 200){
@@ -128,11 +126,8 @@ export default class App extends Component {
             console.log(res)
         })
     }
-    
     componentWillUnmount() {
     }
-
-    
     render() {
         return (
             <Fragment>
